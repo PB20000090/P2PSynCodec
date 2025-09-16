@@ -1,1 +1,1 @@
-# LBCodec
+# P2PSynCodec
