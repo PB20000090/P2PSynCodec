@@ -1,26 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
 
-<!-- saved from url=(0055)http://home.ustc.edu.cn/~ay8067/IEEETran_2019/demo.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charvctk_set="UTF-8">
-    <title>Sound demos for "An Ultra-low-bitrate Neural Speech Codec with Plain-to-Pseudo Synergistic Vector Quantization"</title>
-    <style type="text/css">
-<!--
-.abstract {            max-width: 800px;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        h1,
+        h2 {
+            text-align: left;
+        }
+
+        .author-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .abstract {
+            max-width: 800px;
             margin: 0 auto 40px;
             text-align: justify;
             line-height: 1.6;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 8px;
-}
-.author-info {            text-align: center;
-            margin-bottom: 20px;
-}
--->
+        }
+
+        .table-container {
+            margin-bottom: 60px;
+            margin: auto;
+
+
+
+
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            table-layout: fixed;
+            margin-top: 10px;
+
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .audio-container {
+            display: flex;
+            justify-content: normal;
+            margin-bottom: 10px;
+        }
+
+        .audio-container label {
+            display: block;
+            text-align: center;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .audio-block {
+            width: 15%;
+            text-align: center;
+        }
+
+        audio {
+            width: 100%;
+        }
     </style>
-    </head>
-    <body>
-    <h1 align="center">An Ultra-low-bitrate Neural Speech Codec with Plain-to-Pseudo Synergistic Vector Quantization</h1>
+</head>
+
+<body>
+
+    <h1 style="text-align: center;">An Ultra-low-bitrate Neural Speech Codec with Plain-to-Pseudo Synergistic Vector Quantization</h1>
+
     <div class="author-info">
       <p><b>Xiao-hang Jiang<sup>1</sup>, Yang Ai<sup>1</sup>, Fei Liu<sup>1</sup>, Rui-Chen Zheng<sup>1</sup>, Jian-Qing Gao<sup>2</sup>, Zhen-Hua Ling<sup>1</sup></b></p>
       <p><sup>1</sup>NERC-SLIP, University of Science and Technology of China, Hefei, China<br>
@@ -29,502 +95,449 @@
                 href="mailto:yangai@ustc.edu.cn">yangai</a>,<a href="mailto:zhling@ustc.edu.cn">zhling</a>}@ustc.edu.cn </p>
     </div>
     <div class="abstract">
-      <h3>Abstract</h3>
-      <p>Most neural speech codecs adopt a residual vector quantizer (RVQ), where successive VQs contribute with decreasing importance. However, assigning the same bitrate to all VQs wastes bits and results in a relatively high overall bitrate. To address this issue, we propose an ultra-low-bitrate neural speech codec, termed P2PSynCodec, which incorporates a plain-to-pseudo synergistic vector quantizer (P2PSVQ). The P2PSVQ extends RVQ by embodying the key principle of allocating zero bitrate to the less important VQs at the rear stages. Specifically, the P2PSVQ is a cascaded structure composed of a plain VQ and multiple pseudo VQs that work in a synergistic manner. The plain VQ serves as the foundation, producing basic tokens through quantization, while the pseudo VQs, implemented with neural networks, play a complementary role by generating auxiliary tokens through prediction, which are not used in bitrate calculation. In other words, speech can be decoded solely from the tokens produced by the plain VQ, thereby significantly reducing the bitrate. Experiments demonstrate that P2PSynCodec maintains speech reconstruction quality equivalent to competing codecs at 2.0 kbps, despite operating at merely 0.5 kbps, highlighting its remarkable efficiency in ultra-low-bitrate speech coding.</p>
+        <h3>Abstract</h3>
+        <p>Most neural speech codecs adopt a residual vector quantizer (RVQ), where successive VQs contribute with decreasing importance. However, assigning the same bitrate to all VQs wastes bits and results in a relatively high overall bitrate. To address this issue, we propose an ultra-low-bitrate neural speech codec, termed P2PSynCodec, which incorporates a plain-to-pseudo synergistic vector quantizer (P2PSVQ). The P2PSVQ extends RVQ by embodying the key principle of allocating zero bitrate to the less important VQs at the rear stages. Specifically, the P2PSVQ is a cascaded structure composed of a plain VQ and multiple pseudo VQs that work in a synergistic manner. The plain VQ serves as the foundation, producing basic tokens through quantization, while the pseudo VQs, implemented with neural networks, play a complementary role by generating auxiliary tokens through prediction, which are not used in bitrate calculation. In other words, speech can be decoded solely from the tokens produced by the plain VQ, thereby significantly reducing the bitrate. Experiments demonstrate that P2PSynCodec maintains speech reconstruction quality equivalent to competing codecs at 2.0 kbps, despite operating at merely 0.5 kbps, highlighting its remarkable efficiency in ultra-low-bitrate speech coding.</p>
     </div>
     <h2>3.3. Comparison with Baseline Codecs</h2>
     <p><em><strong>(The sampling rate is 16 kHz)</strong></em><a></a> </p>
     <p>Comparisons at Equal Ultra-Low Bitrates</p>
-<table style="width: 100%;">
-                <thead>
-                  <tr>
-                    <th colspan="9"><div align="left">Example 1 (2961_961_000004_000002.wav) </div></th>
-                  </tr>
-                  <tr>
-                    <th width="379"> Ground Truth </th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style="text-align: center;"><audio controls="">
-                        <source src="https://pb20000090.github.io/P2PSynCodec/gt/2961_961_000004_000002.wav" type="audio/wav">
-                    </audio></td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td></td>
-                    <td>&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <th>MDCTCodec @ 0.5kbps</th>
-                    <th>DAC @ 0.5kbps</th>
-                    <th>BigCodec @ 0.5kbps</th>
-                    <th>Wavtokenizer @ 0.5kbps</th>
-                    <th>P2PSynCodec @ 0.5kbps</th>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;"><audio controls="">
+    <div class="table-container">
+        <h4>Example 1 (2961_961_000004_000002.wav) </h4>
+        <div class="audio-container">
+            <!-- <div class="audio-block">
+                <label>Source: p246</label>
+                <audio controls>
+                    <source src="demo/src/p246_119.wav" type="audio/wav">
+                    您的浏览器不支持音频播放。
+                </audio>
+            </div> -->
+            <div class="audio-block">
+                <label>Ground Truth</label>
+                <audio controls>
+                    <source src="https://pb20000090.github.io/P2PSynCodec/gt/2961_961_000004_000002.wav" type="audio/wav">
+                </audio>
+          </div>
+        </div>
+        <table>
+            <tr>
+                <th>MDCTCodec @ 0.5kbps</th>
+                <th>DAC @ 0.5kbps</th>
+                <th>BigCodec @ 0.5kbps</th>
+                <th>Wavtokenizer @ 0.5kbps</th>
+                <th>P2PSynCodec @ 0.5kbps</th>
+            </tr>
+            <tr>
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/mdctcodec/2961_961_000004_000002.wav" type="audio/wav">
                     </audio></td>
-                    <td style="text-align: center;"><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/dac/2961_961_000004_000002.wav" type="audio/wav">
                     </audio></td>
-                    <td style="text-align: center;"><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/bigcodec/2961_961_000004_000002.wav" type="audio/wav">
                     </audio></td>
-                    <td style="text-align: center;"><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/wavtokenizer/2961_961_000004_000002.wav" type="audio/wav">
                     </audio></td>
-                    <td style="text-align: center;"><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/p2psyn/2961_961_000004_000002.wav" type="audio/wav">
                     </audio></td>
-                  </tr>
-                </tbody>
-    </table>
-<table style="width: 100%;">
-                <thead>
-                  <tr>
-                    <th colspan="9"><div align="left">Example 2 (4970_29093_000037_000000.wav) </div></th>
-                  </tr>
-                  <tr>
-                    <th width="379">Ground Truth </th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><audio controls="">
-                        <source src="https://pb20000090.github.io/P2PSynCodec/gt/4970_29093_000037_000000.wav" type="audio/wav">
-                    </audio></td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td></td>
-                    <td>&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <th>MDCTCodec @ 0.5kbps</th>
-                    <th>DAC @ 0.5kbps</th>
-                    <th>BigCodec @ 0.5kbps</th>
-                    <th>Wavtokenizer @ 0.5kbps</th>
-                    <th>P2PSynCodec @ 0.5kbps</th>
-                  </tr>
-                  <tr>
-                    <td><audio controls="">
+            </tr>
+        </table>
+    </div>
+
+<div class="table-container">
+        <h4>Example 2 (4970_29093_000037_000000.wav) </h4>
+        <div class="audio-container">
+            <div class="audio-block">
+                <label>Ground Truth</label>
+                <audio controls>
+                    <source src="https://pb20000090.github.io/P2PSynCodec/gt/4970_29093_000037_000000.wav" type="audio/wav">
+                </audio>
+          </div>
+        </div>
+        <table>
+            <tr>
+                <th>MDCTCodec @ 0.5kbps</th>
+                <th>DAC @ 0.5kbps</th>
+                <th>BigCodec @ 0.5kbps</th>
+                <th>Wavtokenizer @ 0.5kbps</th>
+                <th>P2PSynCodec @ 0.5kbps</th>
+            </tr>
+            <tr>
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/mdctcodec/4970_29093_000037_000000.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/dac/4970_29093_000037_000000.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/bigcodec/4970_29093_000037_000000.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/wavtokenizer/4970_29093_000037_000000.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/p2psyn/4970_29093_000037_000000.wav" type="audio/wav">
                     </audio></td>
-                  </tr>
-                </tbody>
-    </table>
-              <table style="width: 100%;">
-                <thead>
-                  <tr>
-                    <th colspan="9"><div align="left">Example 3 (260_123288_000033_000000.wav) </div></th>
-                  </tr>
-                  <tr>
-                    <th width="379">Ground Truth </th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><audio controls="">
-                        <source src="https://pb20000090.github.io/P2PSynCodec/gt/260_123288_000033_000000.wav" type="audio/wav">
-                    </audio></td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td></td>
-                    <td>&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <th>MDCTCodec @ 0.5kbps</th>
-                    <th>DAC @ 0.5kbps</th>
-                    <th>BigCodec @ 0.5kbps</th>
-                    <th>Wavtokenizer @ 0.5kbps</th>
-                    <th>P2PSynCodec @ 0.5kbps</th>
-                  </tr>
-                  <tr>
-                    <td><audio controls="">
+            </tr>
+        </table>
+    </div>
+    <div class="table-container">
+        <h4>Example 3 (260_123288_000033_000000.wav) </h4>
+        <div class="audio-container">
+            <!-- <div class="audio-block">
+                <label>Source: p246</label>
+                <audio controls>
+                    <source src="demo/src/p246_119.wav" type="audio/wav">
+                    您的浏览器不支持音频播放。
+                </audio>
+            </div> -->
+            <div class="audio-block">
+                <label>Ground Truth</label>
+                <audio controls>
+                    <source src="https://pb20000090.github.io/P2PSynCodec/gt/260_123288_000033_000000.wav" type="audio/wav">
+                </audio>
+          </div>
+        </div>
+        <table>
+            <tr>
+                <th>MDCTCodec @ 0.5kbps</th>
+                <th>DAC @ 0.5kbps</th>
+                <th>BigCodec @ 0.5kbps</th>
+                <th>Wavtokenizer @ 0.5kbps</th>
+                <th>P2PSynCodec @ 0.5kbps</th>
+            </tr>
+            <tr>
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/mdctcodec/260_123288_000033_000000.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/dac/260_123288_000033_000000.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/bigcodec/260_123288_000033_000000.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/wavtokenizer/260_123288_000033_000000.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/p2psyn/260_123288_000033_000000.wav" type="audio/wav">
                     </audio></td>
-                  </tr>
-                </tbody>
-              </table>
-              <table style="width: 100%;">
-                <thead>
-                  <tr>
-                    <th colspan="9"><div align="left">Example 4 (6829_68769_000071_000001.wav) </div></th>
-                  </tr>
-                  <tr>
-                    <th width="379">Ground Truth </th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><audio controls="">
-                        <source src="https://pb20000090.github.io/P2PSynCodec/gt/6829_68769_000071_000001.wav" type="audio/wav">
-                    </audio></td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td></td>
-                    <td>&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <th>MDCTCodec @ 0.5kbps</th>
-                    <th>DAC @ 0.5kbps</th>
-                    <th>BigCodec @ 0.5kbps</th>
-                    <th>Wavtokenizer @ 0.5kbps</th>
-                    <th>P2PSynCodec @ 0.5kbps</th>
-                  </tr>
-                  <tr>
-                    <td><audio controls="">
+            </tr>
+        </table>
+    </div>
+    <div class="table-container">
+        <h4>Example 4 (6829_68769_000071_000001.wav) </h4>
+        <div class="audio-container">
+            <!-- <div class="audio-block">
+                <label>Source: p246</label>
+                <audio controls>
+                    <source src="demo/src/p246_119.wav" type="audio/wav">
+                    您的浏览器不支持音频播放。
+                </audio>
+            </div> -->
+            <div class="audio-block">
+                <label>Ground Truth</label>
+                <audio controls>
+                    <source src="https://pb20000090.github.io/P2PSynCodec/gt/6829_68769_000071_000001.wav" type="audio/wav">
+                </audio>
+          </div>
+        </div>
+        <table>
+            <tr>
+                <th>MDCTCodec @ 0.5kbps</th>
+                <th>DAC @ 0.5kbps</th>
+                <th>BigCodec @ 0.5kbps</th>
+                <th>Wavtokenizer @ 0.5kbps</th>
+                <th>P2PSynCodec @ 0.5kbps</th>
+            </tr>
+            <tr>
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/mdctcodec/6829_68769_000071_000001.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/dac/6829_68769_000071_000001.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/bigcodec/6829_68769_000071_000001.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/wavtokenizer/6829_68769_000071_000001.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/p2psyn/6829_68769_000071_000001.wav" type="audio/wav">
                     </audio></td>
-                  </tr>
-                </tbody>
-              </table>
-              <table style="width: 100%;">
-                <thead>
-                  <tr>
-                    <th colspan="9"><div align="left">Example 5 (8463_294825_000015_000002.wav) </div></th>
-                  </tr>
-                  <tr>
-                    <th width="379">Ground Truth </th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><audio controls="">
-                        <source src="https://pb20000090.github.io/P2PSynCodec/gt/8463_294825_000015_000002.wav" type="audio/wav">
-                    </audio></td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td></td>
-                    <td>&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <th>MDCTCodec @ 0.5kbps</th>
-                    <th>DAC @ 0.5kbps</th>
-                    <th>BigCodec @ 0.5kbps</th>
-                    <th>Wavtokenizer @ 0.5kbps</th>
-                    <th>P2PSynCodec @ 0.5kbps</th>
-                  </tr>
-                  <tr>
-                    <td><audio controls="">
+            </tr>
+        </table>
+    </div>
+<div class="table-container">
+        <h4>Example 5 (8463_294825_000015_000002.wav) </h4>
+        <div class="audio-container">
+            <!-- <div class="audio-block">
+                <label>Source: p246</label>
+                <audio controls>
+                    <source src="demo/src/p246_119.wav" type="audio/wav">
+                    您的浏览器不支持音频播放。
+                </audio>
+            </div> -->
+            <div class="audio-block">
+                <label>Ground Truth</label>
+                <audio controls>
+                    <source src="https://pb20000090.github.io/P2PSynCodec/gt/8463_294825_000015_000002.wav" type="audio/wav">
+                </audio>
+          </div>
+        </div>
+        <table>
+            <tr>
+                <th>MDCTCodec @ 0.5kbps</th>
+                <th>DAC @ 0.5kbps</th>
+                <th>BigCodec @ 0.5kbps</th>
+                <th>Wavtokenizer @ 0.5kbps</th>
+                <th>P2PSynCodec @ 0.5kbps</th>
+            </tr>
+            <tr>
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/mdctcodec/8463_294825_000015_000002.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/dac/8463_294825_000015_000002.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/bigcodec/8463_294825_000015_000002.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/wavtokenizer/8463_294825_000015_000002.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/p2psyn/8463_294825_000015_000002.wav" type="audio/wav">
                     </audio></td>
-                  </tr>
-                </tbody>
-              </table>
-              <p>&nbsp;</p>
-              <p>Comparisons with High-Bitrate Codecs</p>
-              <table style="width: 100%;">
-                <thead>
-                  <tr>
-                    <th colspan="9"><div align="left">Example 1 (2961_961_000004_000002.wav) </div></th>
-                  </tr>
-                  <tr>
-                    <th width="379">Ground Truth </th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><audio controls="">
-                        <source src="https://pb20000090.github.io/P2PSynCodec/gt/2961_961_000004_000002.wav" type="audio/wav">
-                    </audio></td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td></td>
-                    <td>&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <th>MDCTCodec @ 2.0kbps </th>
-                    <th>DAC @ 2.0kbps </th>
-                    <th>SQCodec @ 1.5kbps </th>
-                    <th>Wavtokenizer @ 2.0kbps </th>
-                    <th>P2PSynCodec @ 0.5kbps </th>
-                  </tr>
-                  <tr>
-                    <td><audio controls="">
+            </tr>
+        </table>
+    </div>
+	<p>&nbsp;</p>
+    <p>Comparisons with High-Bitrate Codecs    </p>
+
+	<div class="table-container">
+        <h4>Example 1 (2961_961_000004_000002.wav) </h4>
+        <div class="audio-container">
+            <!-- <div class="audio-block">
+                <label>Source: p246</label>
+                <audio controls>
+                    <source src="demo/src/p246_119.wav" type="audio/wav">
+                    您的浏览器不支持音频播放。
+                </audio>
+            </div> -->
+            <div class="audio-block">
+                <label>Ground Truth</label>
+                <audio controls>
+                    <source src="https://pb20000090.github.io/P2PSynCodec/gt/2961_961_000004_000002.wav" type="audio/wav">
+                </audio>
+          </div>
+        </div>
+        <table>
+            <tr>
+                <th>MDCTCodec @ 2.0kbps</th>
+                <th>DAC @ 2.0kbps</th>
+                <th>SQCodec @ 1.5kbps</th>
+                <th>Wavtokenizer @ 2.0kbps </th>
+                <th>P2PSynCodec @ 0.5kbps </th>
+            </tr>
+            <tr>
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/B/B_01.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/C/C_01.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/D/D_01.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/E/E_01.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/A/A_01.wav" type="audio/wav">
                     </audio></td>
-                  </tr>
-                </tbody>
-              </table>
-              <table style="width: 100%;">
-                <thead>
-                  <tr>
-                    <th colspan="9"><div align="left">Example 2 (4970_29093_000037_000000.wav) </div></th>
-                  </tr>
-                  <tr>
-                    <th width="379">Ground Truth </th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><audio controls="">
-                        <source src="https://pb20000090.github.io/P2PSynCodec/gt/4970_29093_000037_000000.wav" type="audio/wav">
-                    </audio></td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td></td>
-                    <td>&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <th>MDCTCodec @ 2.0kbps </th>
-                    <th>DAC @ 2.0kbps </th>
-                    <th>SQCodec @ 1.5kbps </th>
-                    <th>Wavtokenizer @ 2.0kbps </th>
-                    <th>P2PSynCodec @ 0.5kbps </th>
-                  </tr>
-                  <tr>
-                    <td><audio controls="">
+            </tr>
+        </table>
+    </div>
+		<div class="table-container">
+        <h4>Example 1 (4970_29093_000037_000000.wav) </h4>
+        <div class="audio-container">
+            <!-- <div class="audio-block">
+                <label>Source: p246</label>
+                <audio controls>
+                    <source src="demo/src/p246_119.wav" type="audio/wav">
+                    您的浏览器不支持音频播放。
+                </audio>
+            </div> -->
+            <div class="audio-block">
+                <label>Ground Truth</label>
+                <audio controls>
+                    <source src="https://pb20000090.github.io/P2PSynCodec/gt/4970_29093_000037_000000.wav" type="audio/wav">
+                </audio>
+          </div>
+        </div>
+        <table>
+            <tr>
+                <th>MDCTCodec @ 2.0kbps</th>
+                <th>DAC @ 2.0kbps</th>
+                <th>SQCodec @ 1.5kbps</th>
+                <th>Wavtokenizer @ 2.0kbps </th>
+                <th>P2PSynCodec @ 0.5kbps </th>
+            </tr>
+            <tr>
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/B/B_03.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/C/C_03.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/D/D_03.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/E/E_03.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/A/A_03.wav" type="audio/wav">
                     </audio></td>
-                  </tr>
-                </tbody>
-              </table>
-              <table style="width: 100%;">
-                <thead>
-                  <tr>
-                    <th colspan="9"><div align="left">Example 3 (260_123288_000033_000000.wav) </div></th>
-                  </tr>
-                  <tr>
-                    <th width="379">Ground Truth </th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><audio controls="">
-                        <source src="https://pb20000090.github.io/P2PSynCodec/gt/260_123288_000033_000000.wav" type="audio/wav">
-                    </audio></td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td></td>
-                    <td>&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <th>MDCTCodec @ 2.0kbps </th>
-                    <th>DAC @ 2.0kbps </th>
-                    <th>SQCodec @ 1.5kbps </th>
-                    <th>Wavtokenizer @ 2.0kbps </th>
-                    <th>P2PSynCodec @ 0.5kbps </th>
-                  </tr>
-                  <tr>
-                    <td><audio controls="">
+            </tr>
+        </table>
+    </div>
+		<div class="table-container">
+        <h4>Example 3 (260_123288_000033_000000.wav) </h4>
+        <div class="audio-container">
+            <!-- <div class="audio-block">
+                <label>Source: p246</label>
+                <audio controls>
+                    <source src="demo/src/p246_119.wav" type="audio/wav">
+                    您的浏览器不支持音频播放。
+                </audio>
+            </div> -->
+            <div class="audio-block">
+                <label>Ground Truth</label>
+                <audio controls>
+                    <source src="https://pb20000090.github.io/P2PSynCodec/gt/260_123288_000033_000000.wav" type="audio/wav">
+                </audio>
+          </div>
+        </div>
+        <table>
+            <tr>
+                <th>MDCTCodec @ 2.0kbps</th>
+                <th>DAC @ 2.0kbps</th>
+                <th>SQCodec @ 1.5kbps</th>
+                <th>Wavtokenizer @ 2.0kbps </th>
+                <th>P2PSynCodec @ 0.5kbps </th>
+            </tr>
+            <tr>
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/B/B_06.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/C/C_06.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/D/D_06.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/E/E_06.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/A/A_06.wav" type="audio/wav">
                     </audio></td>
-                  </tr>
-                </tbody>
-              </table>
-              <table style="width: 100%;">
-                <thead>
-                  <tr>
-                    <th colspan="9"><div align="left">Example 4 (6829_68769_000071_000001.wav) </div></th>
-                  </tr>
-                  <tr>
-                    <th width="379">Ground Truth </th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><audio controls="">
-                        <source src="https://pb20000090.github.io/P2PSynCodec/gt/6829_68769_000071_000001.wav" type="audio/wav">
-                    </audio></td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td></td>
-                    <td>&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <th>MDCTCodec @ 2.0kbps </th>
-                    <th>DAC @ 2.0kbps </th>
-                    <th>SQCodec @ 1.5kbps </th>
-                    <th>Wavtokenizer @ 2.0kbps </th>
-                    <th>P2PSynCodec @ 0.5kbps </th>
-                  </tr>
-                  <tr>
-                    <td><audio controls="">
+            </tr>
+        </table>
+    </div>
+		<div class="table-container">
+        <h4>Example 4 (6829_68769_000071_000001.wav) </h4>
+        <div class="audio-container">
+            <!-- <div class="audio-block">
+                <label>Source: p246</label>
+                <audio controls>
+                    <source src="demo/src/p246_119.wav" type="audio/wav">
+                    您的浏览器不支持音频播放。
+                </audio>
+            </div> -->
+            <div class="audio-block">
+                <label>Ground Truth</label>
+                <audio controls>
+                    <source src="https://pb20000090.github.io/P2PSynCodec/gt/6829_68769_000071_000001.wav" type="audio/wav">
+                </audio>
+          </div>
+        </div>
+        <table>
+            <tr>
+                <th>MDCTCodec @ 2.0kbps</th>
+                <th>DAC @ 2.0kbps</th>
+                <th>SQCodec @ 1.5kbps</th>
+                <th>Wavtokenizer @ 2.0kbps </th>
+                <th>P2PSynCodec @ 0.5kbps </th>
+            </tr>
+            <tr>
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/B/B_07.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/C/C_07.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/D/D_07.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/E/E_07.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/A/A_07.wav" type="audio/wav">
                     </audio></td>
-                  </tr>
-                </tbody>
-              </table>
-              <table style="width: 100%;">
-                <thead>
-                  <tr>
-                    <th colspan="9"><div align="left">Example 5 (8463_294825_000015_000002.wav) </div></th>
-                  </tr>
-                  <tr>
-                    <th width="379">Ground Truth </th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                    <th width="379">&nbsp;</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><audio controls="">
-                        <source src="https://pb20000090.github.io/P2PSynCodec/gt/8463_294825_000015_000002.wav" type="audio/wav">
-                    </audio></td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td></td>
-                    <td>&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <th>MDCTCodec @ 2.0kbps </th>
-                    <th>DAC @ 2.0kbps </th>
-                    <th>SQCodec @ 1.5kbps </th>
-                    <th>Wavtokenizer @ 2.0kbps </th>
-                    <th>P2PSynCodec @ 0.5kbps </th>
-                  </tr>
-                  <tr>
-                    <td><audio controls="">
+            </tr>
+        </table>
+    </div>
+		<div class="table-container">
+        <h4>Example 5 (8463_294825_000015_000002.wav) </h4>
+        <div class="audio-container">
+            <!-- <div class="audio-block">
+                <label>Source: p246</label>
+                <audio controls>
+                    <source src="demo/src/p246_119.wav" type="audio/wav">
+                    您的浏览器不支持音频播放。
+                </audio>
+            </div> -->
+            <div class="audio-block">
+                <label>Ground Truth</label>
+                <audio controls>
+                    <source src="https://pb20000090.github.io/P2PSynCodec/gt/8463_294825_000015_000002.wav" type="audio/wav">
+                </audio>
+          </div>
+        </div>
+        <table>
+            <tr>
+                <th>MDCTCodec @ 2.0kbps</th>
+                <th>DAC @ 2.0kbps</th>
+                <th>SQCodec @ 1.5kbps</th>
+                <th>Wavtokenizer @ 2.0kbps </th>
+                <th>P2PSynCodec @ 0.5kbps </th>
+            </tr>
+            <tr>
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/B/B_18.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/C/C_18.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/D/D_18.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/E/E_18.wav" type="audio/wav">
                     </audio></td>
-                    <td><audio controls="">
+                <td><audio controls>
                         <source src="https://pb20000090.github.io/P2PSynCodec/16k_2.0kbps/A/A_18.wav" type="audio/wav">
                     </audio></td>
-                  </tr>
-                </tbody>
-              </table>
-</body></html>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
