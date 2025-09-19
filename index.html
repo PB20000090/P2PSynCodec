@@ -3,26 +3,49 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charvctk_set="UTF-8">
     <title>Sound demos for "An Ultra-low-bitrate Neural Speech Codec with Plain-to-Pseudo Synergistic Vector Quantization"</title>
-</head>
+    <style type="text/css">
+<!--
+.abstract {            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: justify;
+            line-height: 1.6;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+}
+.author-info {            text-align: center;
+            margin-bottom: 20px;
+}
+-->
+    </style>
+    </head>
     <body>
-    <h2>Sound demos for "An Ultra-low-bitrate Neural Speech Codec with Plain-to-Pseudo Synergistic Vector Quantization"</h2>
-    <h2>Xiao-Hang Jiang, Yang Ai, Fei Liu, Rui-Chen Zheng, Zhen-Hua Ling      </h2>
-    <h2>National Engineering Research Center of Speech and Language Information Processing, University of Science and Technology of China, Hefei, P. R. China</h2>
-    <p>&nbsp;</p>
+    <h1 align="center">An Ultra-low-bitrate Neural Speech Codec with Plain-to-Pseudo Synergistic Vector Quantization</h1>
+    <div class="author-info">
+      <p><b>Xiao-hang Jiang<sup>1</sup>, Yang Ai<sup>1</sup>, Fei Liu<sup>1</sup>, Rui-Chen Zheng<sup>1</sup>, Jian-Qing Gao<sup>2</sup>, Zhen-Hua Ling<sup>1</sup></b></p>
+      <p><sup>1</sup>NERC-SLIP, University of Science and Technology of China, Hefei, China<br>
+      <sup>2</sup>iFLYTEK Research, China</p>
+      <p>{<a href="mailto:jiang_xiaohang@mail.ustc.edu.cn">jiang_xiaohang</a>, <a href="mailto:flui215@mail.ustc.edu.cn">fliu215</a>, <a href="mailto:zhengruichen@mail.ustc.edu.cn">zhengruichen</a>}@mail.ustc.edu.cn,&nbsp;{<a
+                href="mailto:yangai@ustc.edu.cn">yangai</a>,<a href="mailto:zhling@ustc.edu.cn">zhling</a>}@ustc.edu.cn </p>
+    </div>
+    <div class="abstract">
+      <h3>Abstract</h3>
+      <p>Most neural speech codecs adopt a residual vector quantizer (RVQ), where successive VQs contribute with decreasing importance. However, assigning the same bitrate to all VQs wastes bits and results in a relatively high overall bitrate. To address this issue, we propose an ultra-low-bitrate neural speech codec, termed P2PSynCodec, which incorporates a plain-to-pseudo synergistic vector quantizer (P2PSVQ). The P2PSVQ extends RVQ by embodying the key principle of allocating zero bitrate to the less important VQs at the rear stages. Specifically, the P2PSVQ is a cascaded structure composed of a plain VQ and multiple pseudo VQs that work in a synergistic manner. The plain VQ serves as the foundation, producing basic tokens through quantization, while the pseudo VQs, implemented with neural networks, play a complementary role by generating auxiliary tokens through prediction, which are not used in bitrate calculation. In other words, speech can be decoded solely from the tokens produced by the plain VQ, thereby significantly reducing the bitrate. Experiments demonstrate that P2PSynCodec maintains speech reconstruction quality equivalent to competing codecs at 2.0 kbps, despite operating at merely 0.5 kbps, highlighting its remarkable efficiency in ultra-low-bitrate speech coding.</p>
+    </div>
     <h2>3.3. Comparison with Baseline Codecs</h2>
     <p><em><strong>(The sampling rate is 16 kHz)</strong></em><a></a> </p>
     <p>Comparisons at Equal Ultra-Low Bitrates</p>
-<table>
+<table style="width: 100%;">
                 <thead>
                   <tr>
                     <th colspan="9"><div align="left">Example 1 (2961_961_000004_000002.wav) </div></th>
                   </tr>
                   <tr>
-                    <th width="192">Ground Truth </th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
+                    <th width="379"> Ground Truth </th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -61,17 +84,17 @@
                   </tr>
                 </tbody>
     </table>
-              <table>
+<table style="width: 100%;">
                 <thead>
                   <tr>
                     <th colspan="9"><div align="left">Example 2 (4970_29093_000037_000000.wav) </div></th>
                   </tr>
                   <tr>
-                    <th width="192">Ground Truth </th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
+                    <th width="379">Ground Truth </th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -109,18 +132,18 @@
                     </audio></td>
                   </tr>
                 </tbody>
-              </table>
-              <table>
+    </table>
+              <table style="width: 100%;">
                 <thead>
                   <tr>
                     <th colspan="9"><div align="left">Example 3 (260_123288_000033_000000.wav) </div></th>
                   </tr>
                   <tr>
-                    <th width="192">Ground Truth </th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
+                    <th width="379">Ground Truth </th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -159,17 +182,17 @@
                   </tr>
                 </tbody>
               </table>
-              <table>
+              <table style="width: 100%;">
                 <thead>
                   <tr>
                     <th colspan="9"><div align="left">Example 4 (6829_68769_000071_000001.wav) </div></th>
                   </tr>
                   <tr>
-                    <th width="192">Ground Truth </th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
+                    <th width="379">Ground Truth </th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -208,17 +231,17 @@
                   </tr>
                 </tbody>
               </table>
-              <table>
+              <table style="width: 100%;">
                 <thead>
                   <tr>
                     <th colspan="9"><div align="left">Example 5 (8463_294825_000015_000002.wav) </div></th>
                   </tr>
                   <tr>
-                    <th width="192">Ground Truth </th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
+                    <th width="379">Ground Truth </th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -259,17 +282,17 @@
               </table>
               <p>&nbsp;</p>
               <p>Comparisons with High-Bitrate Codecs</p>
-              <table>
+              <table style="width: 100%;">
                 <thead>
                   <tr>
                     <th colspan="9"><div align="left">Example 1 (2961_961_000004_000002.wav) </div></th>
                   </tr>
                   <tr>
-                    <th width="192">Ground Truth </th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
+                    <th width="379">Ground Truth </th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -308,17 +331,17 @@
                   </tr>
                 </tbody>
               </table>
-              <table>
+              <table style="width: 100%;">
                 <thead>
                   <tr>
                     <th colspan="9"><div align="left">Example 2 (4970_29093_000037_000000.wav) </div></th>
                   </tr>
                   <tr>
-                    <th width="192">Ground Truth </th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
+                    <th width="379">Ground Truth </th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -357,17 +380,17 @@
                   </tr>
                 </tbody>
               </table>
-              <table>
+              <table style="width: 100%;">
                 <thead>
                   <tr>
                     <th colspan="9"><div align="left">Example 3 (260_123288_000033_000000.wav) </div></th>
                   </tr>
                   <tr>
-                    <th width="192">Ground Truth </th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
+                    <th width="379">Ground Truth </th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -406,17 +429,17 @@
                   </tr>
                 </tbody>
               </table>
-              <table>
+              <table style="width: 100%;">
                 <thead>
                   <tr>
                     <th colspan="9"><div align="left">Example 4 (6829_68769_000071_000001.wav) </div></th>
                   </tr>
                   <tr>
-                    <th width="192">Ground Truth </th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
+                    <th width="379">Ground Truth </th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -455,17 +478,17 @@
                   </tr>
                 </tbody>
               </table>
-              <table>
+              <table style="width: 100%;">
                 <thead>
                   <tr>
                     <th colspan="9"><div align="left">Example 5 (8463_294825_000015_000002.wav) </div></th>
                   </tr>
                   <tr>
-                    <th width="192">Ground Truth </th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
-                    <th width="192">&nbsp;</th>
+                    <th width="379">Ground Truth </th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
+                    <th width="379">&nbsp;</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -504,5 +527,4 @@
                   </tr>
                 </tbody>
               </table>
-              </body></html>
-
+</body></html>
